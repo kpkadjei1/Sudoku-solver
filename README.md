@@ -1,14 +1,7 @@
-# Sudoku solver
-----
- A program that solves the game of sudoku
+# Sudoku  GUI solver
 
-## Program Details
+ A program that solves the game of sudoku using the backtracking algorithm.
 
- **Description**
+## Instructions
 
- The way the program works is that it finds an empty space within the given sudoku
-board. It then goes ahead to recursively solve the board using backtracking and
-then it finally returns the final solution to the board after it has confirmed the
-solution is valid.    
-  This program usually takes an average time of 0.1s and it is very efficient in
-solving sudoku boards.
+  To play the game you click on a box and hit the number on your keyboard. You then confirm the number you entered by pressing Enter. If you want to change the number you entered hit DEL and to solve the board hit SPACE
