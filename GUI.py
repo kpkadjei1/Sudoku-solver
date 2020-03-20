@@ -141,7 +141,7 @@ class Grid:
                 pygame.display.update()
                 pygame.time.delay(100)
 
-        return False
+    return False
 
 
 class Cube:
