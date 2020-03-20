@@ -10,12 +10,12 @@ def solve(bo):
     """
     find = find_empty(bo)
     if find:
-        row,col = find_empty
+        row,col = find
     else:
         return True
 
     for i in range(1,10):
-        if valid(bo, (row,col), i):
+        if valid(bo, (row, col), i):
             bo[row][col] = i
 
             if solve(bo):
@@ -35,12 +35,12 @@ def valid(bo, pos, num):
 
     #Check row
     for i in range(0, len(bo)):
-        if bo[pos[0][i]] == num and pos[1] != i:
+        if bo[pos[0]][i] == num and pos[1] != i:
             return False
 
     #Check Col
     for i in range(0, len(bo)):
-        if bo[pos[i][1]] == num and pos[1] != i:
+        if bo[i][pos[1]] == num and pos[1] != i:
             return False
 
     #Check box
@@ -54,48 +54,48 @@ def valid(bo, pos, num):
 
     return True
 
-    def find_empty(bo):
-        """
-        description: finds an empty space in the board
-        parameters: bo, partially complete board
-        return: (int, int), row col
-        """
+def find_empty(bo):
+    """
+    description: finds an empty space in the board
+    parameters: bo, partially complete board
+    return: (int, int), row col
+    """
 
-        for i in range(len(bo)):
-            for j in range(len(bo[0])):
-                if bo[i][j] == 0:
-                    return(i, j)
+    for i in range(len(bo)):
+        for j in range(len(bo[0])):
+            if bo[i][j] == 0:
+                return(i, j)
 
-        return None
+    return None
 
-    def print_board(bo):
-        """
-        description: prints the board
-        parameters: bo,2d list of ints
-        return: home
+def print_board(bo):
+    """
+    description: prints the board
+    parameters: bo,2d list of ints
+    return: home
 
-        """
-        for i in range(len(bo)):
-            if i%3 == 0 and i != 0:
-                print('- - - - - - - - - - - - - - -')
-            for j in range(len(bo[0])):
-                if j%3 == 0:
-                    print(" | ",end="\n")
-                else:
-                    print(str(bo[i][j]) + " ", end="")
+    """
+    for i in range(len(bo)):
+        if i%3 == 0 and i != 0:
+            print('- - - - - - - - - - - - - - -')
+        for j in range(len(bo[0])):
+            if j%3 == 0:
+                print(" | ",end="\n")
+            else:
+                print(str(bo[i][j]) + " ", end="")
 
 board = [
-        [7, 8, 0, 4, 0, 0, 1, 2, 0]
-        [6, 0, 0, 0, 7, 5, 0, 0, 9]
-        [0, 0, 0, 6, 0, 1, 0, 7, 8]
-        [0, 0, 7, 0, 4, 0, 2, 6, 0]
-        [0, 0, 1, 0, 5, 0, 9, 3, 0]
-        [9, 0, 4, 0, 6, 0, 0, 0, 5]
-        [0, 7, 0, 3, 0, 0, 0, 1, 2]
-        [1, 2, 0, 0, 0, 7, 4, 0, 0]
-        [0, 4, 9, 2, 0, 6, 0, 0, 7]
+        [7, 8, 0, 4, 0, 0, 1, 2, 0],
+        [6, 0, 0, 0, 7, 5, 0, 0, 9],
+        [0, 0, 0, 6, 0, 1, 0, 7, 8],
+        [0, 0, 7, 0, 4, 0, 2, 6, 0],
+        [0, 0, 1, 0, 5, 0, 9, 3, 0],
+        [9, 0, 4, 0, 6, 0, 0, 0, 5],
+        [0, 7, 0, 3, 0, 0, 0, 1, 2],
+        [1, 2, 0, 0, 0, 7, 4, 0, 0],
+        [0, 4, 9, 2, 0, 6, 0, 0, 7],
     ]
 
 pp = pprint.PrettyPrinter(width=41, compact=True)
 solve(board)
-pp.print(board)
+pp.pprint(board)
