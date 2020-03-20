@@ -2,7 +2,7 @@
 ----
  A program that solves the game of sudoku
 
-##Program Details
+## Program Details
 
  **Description**
 
