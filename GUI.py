@@ -1,4 +1,5 @@
 # GUI.py
+import os
 import pygame
 import time
 pygame.font.init()
@@ -252,6 +253,7 @@ def format_time(secs):
 
 
 def main():
+    os.environ['SDL_VIDEODRIVER'] = 'dummy'
     win = pygame.display.set_mode((540,600))
     pygame.display.set_caption("Sudoku")
     board = Grid(9, 9, 540, 540, win)
