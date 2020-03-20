@@ -29,7 +29,7 @@ class Grid:
         self.win = win
 
     def update_model(self):
-        self.model = [[sel.cubes[i][j].value for j in range(self.cols)] for i in range(self.rows)]
+        self.model = [[self.cubes[i][j].value for j in range(self.cols)] for i in range(self.rows)]
 
     def place(self, val):
         row, col = self.selected
